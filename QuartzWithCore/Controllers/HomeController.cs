@@ -24,7 +24,7 @@ namespace QuartzWithCore.Controllers
             return View();
         }
 
-        public async Task<IActionResult> CheckAvailability(int intervalinSec = 5)
+        public async Task<IActionResult> Repeat(int intervalinSec = 5)
         {
             ITrigger trigger = TriggerBuilder.Create()
              .WithIdentity($"Check Availability-{DateTime.Now}")
@@ -52,7 +52,7 @@ namespace QuartzWithCore.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> CheckAvailabilityV1()
+        public async Task<IActionResult> CheckAvailability()
         {
             ITrigger trigger = TriggerBuilder.Create()
              .WithIdentity($"Check Availability 1-{DateTime.Now}")
